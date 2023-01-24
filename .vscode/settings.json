@@ -1,5 +1,17 @@
 {
   "latex-workshop.latex.outDir": "./out/%DOCFILE%",
+
+  "latex-workshop.latex.clean.fileTypes": [
+    "emptyfolder*/",
+    "%OUTDIR%/cv.aux",
+    "/workspaces/cv/out/cv/cv.aux",
+    "/workspaces/cv/out/cv/cv/",
+    "/workspaces/cv/out/cv/cv/*",
+    "cv*/",
+    "cv/",
+    "cv/*",
+    "cv"
+  ],
   "latex-workshop.synctex.afterBuild.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.tools": [
