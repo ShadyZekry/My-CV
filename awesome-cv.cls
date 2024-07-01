@@ -291,6 +291,12 @@
 %       would be \stackoverflow{123456}{sam-smith}
 \newcommand*{\stackoverflow}[2]{\def\@stackoverflowid{#1}\def\@stackoverflowname{#2}}
 
+% Defines writer's leetcode profile (optional)
+% Usage: \leetcode{<leetcode-userid>}
+%   e.g.https://stackoverflow.com/users/123456/sam-smith
+%       would be \leetcode{sam-smith}
+\newcommand*{\leetcode}[1]{\def\@leetcode{#1}}
+
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
@@ -511,6 +517,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\acvHeaderIconSep\@stackoverflowname}%
+        }%
+      \ifthenelse{\isundefined{\@leetcode}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://leetcode.com/u/\@leetcode}{\faCode\acvHeaderIconSep\@leetcode}%
         }%
       \ifthenelse{\isundefined{\@linkedin}}%
         {}%
