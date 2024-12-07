@@ -1,0 +1,15 @@
+services:
+  latex:
+    build:
+      dockerfile: Dockerfile
+    user: "1000:1000"
+    working_dir: /latex
+    command: ["bash"]
+    volumes:
+      - .:/latex
+      - cache:/home/ubuntu/.texlive2023/texmf-var
+
+volumes:
+  cache:
+    driver: local
+

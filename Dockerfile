@@ -1,9 +1,3 @@
-#-------------------------------------------------------------------------------------------------------------
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
-#-------------------------------------------------------------------------------------------------------------
-
-# syntax=docker/dockerfile:1.3.1
 FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -47,3 +41,8 @@ RUN apt-get autoremove -y \
 ENV DEBIAN_FRONTEND=dialog \
     LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
+
+# Generate and copy font cache
+USER 1000
+RUN luaotfload-tool --update
+
