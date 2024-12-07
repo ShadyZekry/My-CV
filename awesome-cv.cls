@@ -62,22 +62,22 @@
 \RequirePackage{ifxetex}
 % Needed to use \if-\then-\else statement
 \RequirePackage{xifthen}
-% Needed to use a toolbox of programming tools
-\RequirePackage{etoolbox}
-% Needed to change line spacing in specific environment
-\RequirePackage{setspace}
-% Needed to manage fonts
-\RequirePackage[quiet]{fontspec}
-% To support LaTeX quoting style
-\defaultfontfeatures{Ligatures=TeX}
-% Needed to manage math fonts
-\RequirePackage{unicode-math}
+% % Needed to use a toolbox of programming tools
+% \RequirePackage{etoolbox}
+% % Needed to change line spacing in specific environment
+% \RequirePackage{setspace}
+% % Needed to manage fonts
+% \RequirePackage[quiet]{fontspec}
+% % To support LaTeX quoting style
+% \defaultfontfeatures{Ligatures=TeX}
+% % Needed to manage math fonts
+% \RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome5}
 \RequirePackage{roboto}
 \RequirePackage[default,opentype]{sourcesanspro}
-% Needed for the photo ID
-\RequirePackage[skins]{tcolorbox}
+% % Needed for the photo ID
+% \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
