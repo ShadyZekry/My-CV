@@ -198,10 +198,9 @@
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of project
-\newcommand*{\projecttitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\projectpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\projectdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\projectlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\projectdescriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\projecttitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\projectdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
@@ -702,15 +701,19 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.5cm} R{2.5cm}}
 }{%
     \end{tabular*}
   \end{center}
 }
-% Define a line of cv information(projects, award or something else)
-% Usage: \cvprojects{<position>}{<title>}{<location>}{<date>}
+% Define a line of cv information(open-source projects, side-projects or something else)
+% Usage: \cvprojects{<title>}{<description>}{<url>}{<date>}
 \newcommand*{\cvproject}[4]{%
-  \projectdatestyle{#4} & \projectpositionstyle{#1}, \projecttitlestyle{#2} & \projectlocationstyle{#3} \\
+  \bullet\hspace{1mm}%
+  \ifthenelse{\equal{#3}{}}%
+    {\projecttitlestyle{#1}: \projectdescriptionstyle{#2}}%
+    {\href{#3}{\projecttitlestyle{#1} {\tiny\faLink}: \projectdescriptionstyle{#2}}}%
+  & \projectdatestyle{#4}\\[3pt]
 }
 
 % Define an environment for cvhonor
